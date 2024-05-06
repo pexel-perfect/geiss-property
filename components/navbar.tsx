@@ -1,32 +1,16 @@
-import {
-	Navbar as NextUINavbar,
-	NavbarContent,
-	NavbarMenu,
-	NavbarMenuToggle,
-	NavbarBrand,
-	NavbarItem,
-	NavbarMenuItem,
-} from "@nextui-org/navbar";
-import { Button } from "@nextui-org/button";
-import { Kbd } from "@nextui-org/kbd";
 import { Link } from "@nextui-org/link";
-import { Input } from "@nextui-org/input";
-
-import { link as linkStyles } from "@nextui-org/theme";
-
-import { siteConfig } from "@/config/site";
-import NextLink from "next/link";
-import clsx from "clsx";
-
-import { ThemeSwitch } from "@/components/theme-switch";
 import {
-	TwitterIcon,
-	GithubIcon,
-	DiscordIcon,
-	HeartFilledIcon,
-	SearchIcon,
-} from "@/components/icons";
-
+	NavbarBrand,
+	NavbarContent,
+	NavbarItem,
+	NavbarMenu,
+	NavbarMenuItem,
+	NavbarMenuToggle,
+	Navbar as NextUINavbar,
+} from "@nextui-org/navbar";
+import { siteConfig } from "@/config/site";
+import clsx from "clsx";
+import NextLink from "next/link";
 import { Logo } from "@/components/icons";
 
 export const Navbar = () => {
@@ -45,13 +29,13 @@ export const Navbar = () => {
 				className="hidden sm:flex basis-1/5 sm:basis-full"
 				justify="end"
 			>
-				<ul className="hidden lg:flex gap-4 justify-start ml-2">
+				<ul className="hidden lg:flex gap-5 justify-start ml-2">
 					{siteConfig.navItems.map((item) => (
 						<NavbarItem key={item.href}>
 							<NextLink
-								className={clsx(									
-									"data-[active=true]:text-light text-light data-[active=true]:font-medium uppercase font-medium"
-								)}								
+								className={clsx(
+									"data-[active=true]:text-light text-light data-[active=true]:font-medium uppercase  font-secondary font-[500] text-[17px]"
+								)}
 								href={item.href}
 							>
 								{item.label}
@@ -59,15 +43,15 @@ export const Navbar = () => {
 						</NavbarItem>
 					))}
 				</ul>
-				
+
 
 			</NavbarContent>
 			{/* Mobile menu */}
-			<NavbarContent className="sm:hidden basis-1 pl-4 text-primary" justify="end">				
+			<NavbarContent className="sm:hidden basis-1 pl-4 text-primary" justify="end">
 				<NavbarMenuToggle />
 			</NavbarContent>
 
-			<NavbarMenu>				
+			<NavbarMenu>
 				<div className="mx-4 mt-6 flex flex-col gap-2">
 					{siteConfig.navItems.map((item, index) => (
 						<NavbarMenuItem key={`${item}-${index}`}>

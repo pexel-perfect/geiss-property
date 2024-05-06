@@ -13,7 +13,7 @@ export default function Home() {
 		<>
 			{/* hero section */}
 			<div
-				className="relative bg-cover bg-center h-screen flex items-center justify-center"
+				className="relative bg-cover bg-center h-screen flex items-center justify-center pt-24"
 				style={{
 					backgroundImage: `url('/images/carmen-und-robert-geiss-in-dubai.jpg')`,
 				}}
@@ -21,10 +21,15 @@ export default function Home() {
 				<div className="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-60"></div>
 				<div className="relative z-10 text-center text-white">
 					<h1 className="text-4xl md:text-6xl lg:text-7xl mb-4 font-primary">Die Geissens - Immobilien in Dubai</h1>
-					<p className="text-lg md:text-xl lg:text-2xl mb-6">Entdecken Sie Luxusimmobilien mit Geiss Properties in Dubai.</p>
-					<CustomButton>
-						Kontaktformular
-					</CustomButton>
+					<p className="text-lg md:text-xl lg:text-3xl mb-6 font-primary">Entdecken Sie Luxusimmobilien mit Geiss Properties in Dubai.</p>
+					<Link href="/contact-us">
+						<CustomButton>
+							Kontaktformular
+						</CustomButton>
+					</Link>
+					<Link href="/listings">
+					<p className="pt-8 text-light text-center hover:text-primary">[ ALLE ANGEBOTE ANZEIGEN ]</p>
+				</Link>
 				</div>
 			</div>
 			{/* section 2 started */}
@@ -54,7 +59,7 @@ export default function Home() {
 			{/* section 3 */}
 			<div className="container pb-14">
 				<div className="text-center">
-					<p className="text-primary">Jetzt den Luxus Dubai&apos;s entdecken mit Carmen und Robert Geiss!</p>
+					<p className="text-primary pb-4 ">Jetzt den Luxus Dubai&apos;s entdecken mit Carmen und Robert Geiss!</p>
 					<CustomTitle>The World of Luxury</CustomTitle>
 					<CustomDescription>Carmen und Robert Geiss laden bei Geiss Properties ein, in eine Welt unvergleichlichen Luxus und einzigartiger Möglichkeiten einzutreten. Unser Portfolio umfasst ein sorgfältig ausgewähltes Angebot exquisitester Immobilien, gelegen in den besten Lagen und prestigeträchtigen Gegenden Dubais.</CustomDescription>
 				</div>
@@ -64,7 +69,6 @@ export default function Home() {
 			<div className="container pb-12">
 				<div
 					className="flex flex-col items-center md:flex-row md:justify-center gap-2 md:gap-6"
-
 				>
 					<NextUIImage
 
@@ -81,8 +85,8 @@ export default function Home() {
 				</div>
 			</div>
 			<DividerWithIcon />
-			<div className="container pb-14">
-				<CustomTitle > Aktuelle Angebote</CustomTitle>
+			<div className="container-x py-8 pb-14">
+				<CustomTitle> Aktuelle Angebote</CustomTitle>
 				<div className="pt-4">
 					<div
 						className="flex flex-col items-center md:flex-row md:justify-center gap-2 md:gap-6"
@@ -110,6 +114,9 @@ export default function Home() {
 						/>
 					</div>
 				</div>
+				<Link href="/listings">
+					<p className="pt-8 text-light text-center hover:text-primary">[ ALLE ANGEBOTE ANZEIGEN ]</p>
+				</Link>
 			</div>
 		</>
 	);
