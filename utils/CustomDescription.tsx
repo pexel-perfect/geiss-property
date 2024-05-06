@@ -5,6 +5,6 @@ interface CustomDescriptionProps {
 }
 export const CustomDescription = ({ children }: CustomDescriptionProps) => {
     return (
-        <p className="text-light font-primary text-xl font-extralight px-32 tracking-wide leading-8">{children}</p>
+        <p className="text-light font-primary lg:text-xl font-extralight lg:px-32 tracking-wide leading-8">{children}</p>
     )
 }

@@ -2,8 +2,10 @@ import { CustomButton } from "@/utils/CustomButton";
 import { CustomDescription } from "@/utils/CustomDescription";
 import { CustomSectionWrapper } from "@/utils/CustomSectionWrapper";
 import { CustomTitle } from "@/utils/CustomTitle";
+import { DividerWithImg } from "@/utils/DividerWithImg";
 import Image from "next/image";
 import Link from "next/link";
+import { Image as NextUIImage } from "@nextui-org/image";
 
 export default function Home() {
 	return (
@@ -51,6 +53,27 @@ export default function Home() {
 					<p className="text-primary">Jetzt den Luxus Dubai&apos;s entdecken mit Carmen und Robert Geiss!</p>
 					<CustomTitle>The World of Luxury</CustomTitle>
 					<CustomDescription>Carmen und Robert Geiss laden bei Geiss Properties ein, in eine Welt unvergleichlichen Luxus und einzigartiger Möglichkeiten einzutreten. Unser Portfolio umfasst ein sorgfältig ausgewähltes Angebot exquisitester Immobilien, gelegen in den besten Lagen und prestigeträchtigen Gegenden Dubais.</CustomDescription>
+				</div>
+			</CustomSectionWrapper>
+			<DividerWithImg />
+			{/* image section */}
+			<CustomSectionWrapper>
+				<div
+					className="flex flex-col items-center md:flex-row md:justify-center gap-2 md:gap-6"
+
+				>
+					<NextUIImage
+
+						width={500}
+						src="/images/geiss-propertie-carmen-geiss-768x512.jpg"
+						alt="NextUI Album Cover"
+					/>
+					<NextUIImage
+
+						width={500}
+						src="/images/geiss-propertie-robert-geiss-768x512.jpg"
+						alt="NextUI Album Cover"
+					/>
 				</div>
 			</CustomSectionWrapper>
 		</>
