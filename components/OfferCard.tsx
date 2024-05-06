@@ -1,35 +1,53 @@
 
-import {Card, CardHeader, CardBody, CardFooter, Image, Button} from "@nextui-org/react";
-export const OfferCard = () => {
-    
+import { Button, Card, CardFooter, CardHeader, Image as NextUiImage } from "@nextui-org/react";
+import Image from "next/image";
+import Link from "next/link";
+
+interface OfferCardProps {
+    title: string;
+    price: string;
+    bed: string;
+    area: string;
+    url: string;
+}
+export const OfferCard = ({ title, price, bed, area, url }: OfferCardProps) => {
 
 
-    return (
-        <Card isFooterBlurred className="w-full h-[300px] col-span-12 sm:col-span-7">
-            <CardHeader className="absolute z-10 top-1 flex-col items-start">
-                <p className="text-tiny text-white/60 uppercase font-bold">Your day your way</p>
-                <h4 className="text-white/90 font-medium text-xl">Your checklist for better sleep</h4>
-            </CardHeader>
-            <Image
-                removeWrapper
-                alt="Relaxing app background"
-                className="z-0 w-full h-full object-cover"
-                src="https://nextui.org/images/card-example-5.jpeg"
-            />
-            <CardFooter className="absolute bg-black/40 bottom-0 z-10 border-t-1 border-default-600 dark:border-default-100">
-                <div className="flex flex-grow gap-2 items-center">
-                    <Image
-                        alt="Breathing app icon"
-                        className="rounded-full w-10 h-11 bg-black"
-                        src="https://nextui.org/images/breathing-app-icon.jpeg"
-                    />
-                    <div className="flex flex-col">
-                        <p className="text-tiny text-white/60">Breathing App</p>
-                        <p className="text-tiny text-white/60">Get a good night&apos;s sleep.</p>
+
+    return (        
+        <Link href={"/listing"}>
+            <div className="relative overflow-hidden rounded-lg shadow-lg">
+                {/* Image */}
+                <NextUiImage
+                    src={`/images/${url}`}
+                    alt={title}
+                    width={400}
+                    height={400}
+                //  
+                className="z-0"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
+
+                <div className="absolute inset-0 flex flex-col justify-between items-center text-white z-10 w-full p-4">
+                    <div></div>
+
+
+                    <div className="flex flex-col justify-between  gap-2 w-full">
+                        <h3 className="text-xl font-bold  font-primary text-center">{title}</h3>
+                        <p className="text-center mb-4 font-secondary text-primary font-semibold">{price}</p>
+                        <div className="flex justify-between">
+                            <div className="flex items-center gap-2">
+                                <Image src="/images/geissproperty-bedroom.png" height={40} width={40} alt="bed" />
+                                <p className="font-secondary text-light/70">{bed}</p>
+                            </div>
+                            <div className="flex items-center gap-2">
+                                <Image src="/images/geissproperty-wohnflaeche.png" height={35} width={35} alt="area" />
+                                <p className="font-secondary text-light/70">{area}</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
-                <Button radius="full" size="sm">Get App</Button>
-            </CardFooter>
-        </Card>
+            </div>
+        </Link>
     )
 }
