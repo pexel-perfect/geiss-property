@@ -1,5 +1,5 @@
 import { OfferCard } from "@/components/OfferCard";
-import { CustomButton } from "@/utils/CustomButton";
+import { CustomOutlinedButton } from "@/utils/CustomButton";
 import { CustomDescription } from "@/utils/CustomDescription";
 import { CustomTitle } from "@/utils/CustomTitle";
 import { DividerWithIcon } from "@/utils/DividerWithIcon";
@@ -23,9 +23,9 @@ export default function Home() {
 					<h1 className="text-4xl md:text-6xl lg:text-7xl mb-4 font-primary">Die Geissens - Immobilien in Dubai</h1>
 					<p className="text-lg md:text-xl lg:text-3xl mb-6 font-primary">Entdecken Sie Luxusimmobilien mit Geiss Properties in Dubai.</p>
 					<Link href="/contact-us">
-						<CustomButton>
+						<CustomOutlinedButton>
 							Kontaktformular
-						</CustomButton>
+						</CustomOutlinedButton>
 					</Link>
 					<Link href="/listings">
 					<p className="pt-8 text-light text-center hover:text-primary">[ ALLE ANGEBOTE ANZEIGEN ]</p>
@@ -61,7 +61,7 @@ export default function Home() {
 				<div className="text-center">
 					<p className="text-primary pb-4 ">Jetzt den Luxus Dubai&apos;s entdecken mit Carmen und Robert Geiss!</p>
 					<CustomTitle>The World of Luxury</CustomTitle>
-					<CustomDescription>Carmen und Robert Geiss laden bei Geiss Properties ein, in eine Welt unvergleichlichen Luxus und einzigartiger Möglichkeiten einzutreten. Unser Portfolio umfasst ein sorgfältig ausgewähltes Angebot exquisitester Immobilien, gelegen in den besten Lagen und prestigeträchtigen Gegenden Dubais.</CustomDescription>
+					<CustomDescription >Carmen und Robert Geiss laden bei Geiss Properties ein, in eine Welt unvergleichlichen Luxus und einzigartiger Möglichkeiten einzutreten. Unser Portfolio umfasst ein sorgfältig ausgewähltes Angebot exquisitester Immobilien, gelegen in den besten Lagen und prestigeträchtigen Gegenden Dubais.</CustomDescription>
 				</div>
 			</div>
 			<DividerWithImg />

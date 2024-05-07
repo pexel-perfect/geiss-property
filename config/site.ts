@@ -26,7 +26,7 @@ export const siteConfig = {
 		},
 		{
 			label: "Kontaktformular",
-			href: "/kontaktformular",
+			href: "/contact-us",
 		}
 	],
 	
