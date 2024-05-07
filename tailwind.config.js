@@ -29,7 +29,7 @@ module.exports = {
         primary: '#FCD8B0',
         background: '#111521',
         grayBackground: '#161B2B',
-        light: '#F6F6F6',
+        light: '#D4D4D4',
         dark: "#000"
       },
       fontFamily: {
