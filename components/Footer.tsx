@@ -1,7 +1,8 @@
 import Link from "next/link"
-import { FaFacebook, FaInstagram, FaYoutube, FaQuestionCircle, FaHeadset } from "react-icons/fa";
+import { FaFacebook, FaInstagram, FaYoutube, FaQuestionCircle, FaHeadset, FaWhatsapp } from "react-icons/fa";
 import { Logo } from "./icons";
 import { AiOutlinePhone, AiOutlineMail } from "react-icons/ai";
+import { NewsLetterForm } from "./form/NewsLetterForm";
 
 export const Footer = () => {
 
@@ -45,29 +46,21 @@ export const Footer = () => {
                                 <a className="ml-2 text-[#9ca3af] transition hover:text-light" href="#">+49-2234-9967099</a>
                             </div>
                             <div className="flex items-center justify-center md:justify-start">
+                                <FaWhatsapp  className="h-5 w-5 text-[#9ca3af]" />
+                                <a className="ml-2 text-[#9ca3af] transition hover:text-light" href="https://api.whatsapp.com/send/?phone=971503573748&text=Ich+bin+an+Immobilien+in+Dubai+interessiert&type=phone_number&app_absent=0" target="_blank">+971-50-35-737-48</a>
+                            </div>
+                            <div className="flex items-center justify-center md:justify-start">
                                 <AiOutlineMail className="h-5 w-5 text-[#9ca3af]" />
                                 <a className="ml-2 text-[#9ca3af] transition hover:text-light" href="#">inquiry@geissproperty.com</a>
                             </div>
                         </div>
                     </div>
 
-                    <div className="text-center sm:text-left md:col-span-2">
-                        <p className="text-lg font-medium text-primary">Stay in Touch</p>
+                    <div className="text-center sm:text-left md:col-span-2 ">
+                        <p className="text-lg font-medium text-primary ps-4">Jetzt unseren Newsletter abonnieren!</p>
                         <div className="mx-auto mt-4 max-w-md sm:ms-0">
-                            <form className="w-full">
-                                <label htmlFor="UserEmail" className="sr-only">Email</label>
-                                <div className="flex border border-gray-700 rounded-md">
-                                    <input
-                                        type="email"
-                                        id="UserEmail"
-                                        placeholder="john@rhcp.com"
-                                        className="w-full border-none focus:border-transparent focus:outline-none sm:text-sm bg-grayBackground px-4"
-                                    />
-                                    <button className="px-6 py-3 text-sm font-bold uppercase bg-primary text-white transition-none hover:bg-primary/60 sm:w-auto sm:shrink-0">
-                                        Sign Up
-                                    </button>
-                                </div>
-                            </form>
+                            
+                            <NewsLetterForm />
                         </div>
                     </div>
                 </div>
@@ -80,19 +73,19 @@ export const Footer = () => {
                     </p>
                     <ul className="mt-4 flex justify-center gap-6 sm:mt-0 sm:justify-start">
                         <li>
-                            <a href="#" rel="noreferrer" target="_blank" className="text-primary transition hover:text-primary/75">
+                            <a href="https://www.facebook.com/people/Geiss-Property/61558678481268/" rel="noreferrer" target="_blank" className="text-primary transition hover:text-primary/75">
                                 <span className="sr-only">Facebook</span>
                                 <FaFacebook className="h-6 w-6" />
                             </a>
                         </li>
                         <li>
-                            <a href="#" rel="noreferrer" target="_blank" className="text-primary transition hover:text-primary/75">
+                            <a href="https://www.instagram.com/geissproperty_original/" rel="noreferrer" target="_blank" className="text-primary transition hover:text-primary/75">
                                 <span className="sr-only">Instagram</span>
                                 <FaInstagram className="h-6 w-6" />
                             </a>
                         </li>
                         <li>
-                            <a href="#" rel="noreferrer" target="_blank" className="text-primary transition hover:text-primary/75 block" style={{ lineHeight: "1" }}>
+                            <a href="https://www.youtube.com/@GeissProperty" rel="noreferrer" target="_blank" className="text-primary transition hover:text-primary/75 block" style={{ lineHeight: "1" }}>
                                 <span className="sr-only">YouTube</span>
                                 <FaYoutube className="h-6 w-6" />
                             </a>

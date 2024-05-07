@@ -10,19 +10,19 @@ export const siteConfig = {
 		},
 		{
 			label: "Über uns",
-			href: "/uber-uns",
+			href: "/about-us",
 		},
 		{
 			label: "Angebote",
-			href: "/angebote",
+			href: "/listings",
 		},
 		{
 			label: "Dubai-News",
-			href: "/dubai-news",
+			href: "/dubai-info",
 		},
 		{
 			label: "Services",
-			href: "/services",
+			href: "/corporate-relocation-services",
 		},
 		{
 			label: "Kontaktformular",

@@ -7,7 +7,7 @@ interface CustomTitleProps {
 export const CustomTitle = ({ children, fontFamily = "font-primary" }: CustomTitleProps) => {
 
     return (
-        <p className={`text-light text-3xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl ${fontFamily} py-4`}>{children}</p>
+        <p className={`text-white text-4xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl ${fontFamily} py-4`}>{children}</p>
 
     )
 }

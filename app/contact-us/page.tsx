@@ -69,21 +69,22 @@ export default function ContactPage() {
 					<NextUiImage
 						isBlurred
 						width={500}
+						className="section-header"
 						alt="contact-geissproperties"
 						src="/images/contact-geissproperties.png"
 					/>
-					<div className="mt-12 space-y-4 text-sm">
-						<div className="flex items-center justify-center md:justify-start">
+					<div className="mt-12 space-y-4 text-sm pb-4">
+						<div className="flex items-center justify-start">
 							<FaLocationDot className="h-6 w-7 text-light " />
-							<a className="ml-2 text-light transition hover:text-[#9ca3af] text-xl" href="#">Creek Harbour, Dubai, United Arab Emirates</a>
+							<a className="ml-2 text-light transition hover:text-[#9ca3af] md:text-xl" href="#">Creek Harbour, Dubai, United Arab Emirates</a>
 						</div>
-						<div className="flex items-center justify-center md:justify-start">
+						<div className="flex items-center justify-start">
 							<AiOutlinePhone className="h-6 w-7 text-light" />
-							<a className="ml-2 text-light transition hover:text-[#9ca3af] text-xl" href="#">+49-2234-9967099</a>
+							<a className="ml-2 text-light transition hover:text-[#9ca3af] md:text-xl" href="#">+49-2234-9967099</a>
 						</div>
-						<div className="flex items-center justify-center md:justify-start">
+						<div className="flex items-center justify-start">
 							<AiOutlineMail className="h-6 w-7 text-light" />
-							<a className="ml-2 text-light transition hover:text-[#9ca3af] text-xl" href="#">inquiry@geissproperty.com</a>
+							<a className="ml-2 text-light transition hover:text-[#9ca3af] md:text-xl" href="#">inquiry@geissproperty.com</a>
 						</div>
 					</div>
 				</div>

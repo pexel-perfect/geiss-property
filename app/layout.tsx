@@ -42,7 +42,7 @@ export default function RootLayout({
 				<Providers >
 					<div className="relative flex flex-col ">
 						<Navbar />
-						<main >
+						<main className="min-h-screen ">
 							{children}
 						</main>
 						<Footer />

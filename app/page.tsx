@@ -85,7 +85,7 @@ export default function Home() {
 				</div>
 			</div>
 			<DividerWithIcon />
-			<div className="container-x py-8 pb-14">
+			<div className="container-x py-8 pb-14 text-center">
 				<CustomTitle> Aktuelle Angebote</CustomTitle>
 				<div className="pt-4">
 					<div
