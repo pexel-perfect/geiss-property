@@ -97,6 +97,7 @@ export default function Home() {
 							area="2,015 Sq. Ft. | 187 m²"
 							bed="3"
 							url="Entry-2-Bedroom-zaabeel-Tower.jpg"
+							redirect="/listings"
 						/>
 						<OfferCard
 							title="DUPLEX APARTMENT ONE ZA'ABEEL TOWER - ZUM KAUF ODER MIETE"
@@ -104,6 +105,7 @@ export default function Home() {
 							area="2,579 Sq. Ft. | 240 m²"
 							bed="3"
 							url="High-end-living-Room-zaabeel-Tower.jpg"
+							redirect="/listings"
 						/>
 						<OfferCard
 							title="VILLA PALM JUMEIRAH"
@@ -111,6 +113,7 @@ export default function Home() {
 							area="6,060 Sq. Ft. | 563 m²"
 							bed="4"
 							url="Villa-Palm.png"
+							redirect="/listings"
 						/>
 					</div>
 				</div>

@@ -51,7 +51,7 @@ export const Footer = () => {
                             </div>
                             <div className="flex items-center justify-center md:justify-start">
                                 <AiOutlineMail className="h-5 w-5 text-[#9ca3af]" />
-                                <a className="ml-2 text-[#9ca3af] transition hover:text-light" href="#">inquiry@geissproperty.com</a>
+                                <a className="ml-2 text-[#9ca3af] transition hover:text-light" href="#">anfrage@geissproperty.com</a>
                             </div>
                         </div>
                     </div>

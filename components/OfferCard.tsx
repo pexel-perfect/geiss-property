@@ -1,30 +1,27 @@
 
-import { Button, Card, CardFooter, CardHeader, Image as NextUiImage } from "@nextui-org/react";
+import { Image as NextUiImage } from "@nextui-org/react";
 import Image from "next/image";
 import Link from "next/link";
 
 interface OfferCardProps {
     title: string;
     price: string;
-    bed: string;
+    bed: string | number;
     area: string;
     url: string;
+    redirect: string;
 }
-export const OfferCard = ({ title, price, bed, area, url }: OfferCardProps) => {
+export const OfferCard = ({ title, price, bed, area, url, redirect }: OfferCardProps) => {
 
-
-
-    return (        
-        <Link href={"/listing"}>
+    return (
+        <Link href={redirect}>
             <div className="relative overflow-hidden rounded-lg shadow-lg">
-                {/* Image */}
                 <NextUiImage
                     src={`/images/${url}`}
                     alt={title}
                     width={400}
                     height={400}
-                //  
-                className="z-0"
+                    className="z-0 banner-img"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/90 to-transparent" />
 
@@ -37,7 +34,7 @@ export const OfferCard = ({ title, price, bed, area, url }: OfferCardProps) => {
                         <p className="text-center mb-4 font-secondary text-primary font-semibold">{price}</p>
                         <div className="flex justify-between">
                             <div className="flex items-center gap-2">
-                                <Image src="/images/geissproperty-bedroom.png" height={40} width={40} alt="bed" />
+                                <Image src="/images/geissproperty-bedroom.png" height={40} width={40} alt="bed"  />
                                 <p className="font-secondary text-light/70">{bed}</p>
                             </div>
                             <div className="flex items-center gap-2">

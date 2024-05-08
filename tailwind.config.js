@@ -30,7 +30,8 @@ module.exports = {
         background: '#111521',
         grayBackground: '#161B2B',
         light: '#D4D4D4',
-        dark: "#000"
+        dark: "#000",
+        description: "#9c9ca7"
       },
       fontFamily: {
         'primary': ['Gilda Display', 'serif'],
