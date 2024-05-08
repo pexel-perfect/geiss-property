@@ -1,8 +1,8 @@
 export type SiteConfig = typeof siteConfig;
 
 export const siteConfig = {
-	name: "Geiss Properties",
-	description: "Make beautiful websites regardless of your design experience.",
+	name: "Geiss Properties - Luxus Immobilien mit Carmen und Robert Geiss – Die Geissens in Dubai",
+	description: "Die ECHTEN Geiss Properties – Ihre Agentur für luxuriöses Wohnen in Dubai mit Robert und Carmen Geiss ✓ Die Geissens ✓ Luxusvillen ✓ Luxus-Wohnungen. Entdecken Sie jetzt die tollen Angebote!",
 	navItems: [
 		{
 			label: "Home",
