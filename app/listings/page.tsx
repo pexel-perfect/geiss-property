@@ -52,7 +52,7 @@ const AboutPage = () => {
 						price={list.price}
 						area={list.area}
 						bed={list.bedroom}
-						url={list.banner}
+						url={list.bannerImages[0]?.link}
 						redirect={`/listings/${list.id}`}
 					/>
 				))}

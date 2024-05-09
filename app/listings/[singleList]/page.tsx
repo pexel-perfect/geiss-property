@@ -2,11 +2,15 @@
 import { getListById } from "@/lib/data";
 import { CustomTitle } from "@/utils/CustomTitle";
 import LoadingSkeleton from "@/utils/LoadingSkeleton";
-import { Chip, Image as NextUiImage } from "@nextui-org/react";
+import { BreadcrumbItem, Breadcrumbs, Chip, Image as NextUiImage } from "@nextui-org/react";
 import Error from "next/error";
 import Link from "next/link";
 import React from "react";
-import SingleListIconBox from "./SingleListIconBox";
+import SingleListIconBox from "./components/SingleListIconBox";
+import ImageModal from "./components/ImageModal";
+import PropertyTypeCard from "./components/PropertyTypeCard";
+import { DividerWithIcon } from "@/utils/DividerWithIcon";
+import ImageSlider from "./components/ImageSlider";
 
 interface Props {
     params: { singleList: string | number };
@@ -16,6 +20,11 @@ const SingleListPage: React.FC<Props> = ({ params }) => {
     const { singleList } = params;
     const [listData, setListData] = React.useState<any>(null);
     const [loading, setLoading] = React.useState<boolean>(true);
+    const [openImageDialog, setOpenImageDialog] = React.useState<string | null>(null);
+
+    const handleOpenModal = () => {
+        setOpenImageDialog(null)
+    }
 
     React.useEffect(() => {
         const fetchListData = async () => {
@@ -36,26 +45,33 @@ const SingleListPage: React.FC<Props> = ({ params }) => {
     return (
         <LoadingSkeleton open={loading}>
             <div className="container">
+                <Breadcrumbs color="primary">
+                    <BreadcrumbItem href="/">Home</BreadcrumbItem>
+                    <BreadcrumbItem href="/listings">Property</BreadcrumbItem>
+                    <BreadcrumbItem >{listData?.title}</BreadcrumbItem>
+                </Breadcrumbs>
                 <div className="flex justify-start items-center gap-4">
                     <CustomTitle>{listData?.title ?? ''}</CustomTitle>
                     <Chip color="secondary" radius="sm" className="uppercase">{listData?.category}</Chip>
                 </div>
                 <div className="md:flex gap-4 pt-4">
-                    <div>
+                    <div className="cursor-pointer">
                         <NextUiImage
-                            src={`/images/${listData?.banner}`}
+                            onClick={() => setOpenImageDialog(listData?.bannerImages[0]?.link)}
+                            src={listData?.bannerImages[0]?.link}
                             alt={listData?.title}
                             width={400}
                             height={400}
                             className="z-0 singleItem-bannerImg"
                         />
                     </div>
-                    <div className="pt-4 md:pt-2 grid grid-cols-2 gap-2">
-                        {listData?.images?.map((image: string) =>
+                    <div className="pt-4 md:pt-2 grid grid-cols-2 gap-2 cursor-pointer">
+                        {listData?.bannerImages?.slice(1).map((image: any) =>
                             <NextUiImage
+                                onClick={() => setOpenImageDialog(image.link)}
                                 key={image}
-                                src={`/images/${image}`}
-                                alt={listData?.title}
+                                src={image?.link}
+                                alt={image?.title}
                                 width={400}
                                 height={400}
                                 className="z-0 custom-img"
@@ -63,14 +79,13 @@ const SingleListPage: React.FC<Props> = ({ params }) => {
                     </div>
                 </div>
                 <div className="md:flex pt-8">
-                    <div className="text-light md:w-4/6 pr-8">
+                    <div className="text-light md:w-9/12 pr-8">
                         <h1 className="text-primary text-xl font-bold font-primary">{listData?.title ?? ''}</h1>
                         <p className="font-primary text-description pt-2">{listData?.description ?? ''}</p>
                         <div className="pt-8">
                             <div className="text-light">
                                 <div>
                                     <h1 className="text-primary text-xl font-bold font-primary">Daten und Fakten:</h1>
-
                                     {listData?.rooms && <SingleListIconBox
                                         url="/icon-room.png"
                                         item="Räume"
@@ -92,25 +107,35 @@ const SingleListPage: React.FC<Props> = ({ params }) => {
                                         count={listData?.area}
                                     />}
                                 </div>
+                                {/* optional property type section */}
                                 {
-                                    listData?.furnishing &&
+                                    listData?.property_type &&
+                                    <div className="pt-8">
+                                        <h1 className="text-primary text-xl font-bold font-primary">Property Type:</h1>
+                                        {listData?.property_type?.map((property: any, index: number) => <PropertyTypeCard key={index} type={property.type} value={property.value} />)}
+                                    </div>
+                                }
+
+                                {/* optional amenities section */}
+                                {
+                                    listData?.amenities &&
                                     <div className="pt-8">
                                         <h1 className="text-primary text-xl font-bold font-primary">Ausstattung:</h1>
                                         <ol className="list-disc ps-4">
-                                            {listData?.furnishing.map((item: string) => <li key={item} className="font-primary text-description pt-2">{item}</li>)}
+                                            {listData?.amenities.map((item: string) => <li key={item} className="font-primary text-description pt-2">{item}</li>)}
                                         </ol>
 
                                     </div>
                                 }
-                                {listData?.property_map &&
-                                    <NextUiImage
-                                        src={`/images/${listData?.property_map}`}
-                                        alt={listData?.title}
-                                        width={1200}
-                                        height={400}
-                                        className="z-0 pt-8 w-full object-cover rounded-md"
-                                    />
+                                {/* floor plans optional */}
+                                {listData?.floor_plans &&
+                                    <div className="pt-8">
+                                        <h1 className="text-primary text-xl font-bold font-primary pb-4">Floor Plans:</h1>
+                                        <ImageSlider data={listData?.floor_plans} />
+                                    </div>
                                 }
+
+                                {/* hand over & price */}
                                 {(listData?.handover || listData?.price) && <div className="px-4 pb-4 mt-8 bg-grayBackground">
                                     {listData?.handover && <SingleListIconBox
                                         url="/icon-calender.png"
@@ -130,12 +155,12 @@ const SingleListPage: React.FC<Props> = ({ params }) => {
                             </div>
                         </div>
                     </div>
-                    <div className="md:w-2/6 bg-grayBackground text-light p-4 rounded-lg mt-4 md:mt-0">
+                    <div className="md:w-1/4 bg-grayBackground text-light p-4 rounded-lg mt-4 md:mt-0">
                         Form will be added soon
                     </div>
                 </div>
-
             </div>
+            {openImageDialog && <ImageModal open={openImageDialog} data={listData.bannerImages} handleOpenModal={handleOpenModal} />}
         </LoadingSkeleton>
     );
 };
