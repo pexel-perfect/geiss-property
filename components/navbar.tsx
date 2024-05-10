@@ -64,7 +64,7 @@ export const Navbar = () => {
 			</div>
 
 			{isMobileMenuOpen && (
-				<div className="fixed top-44 right-0 w-full h-full z-50 flex justify-center items-center ">
+				<div className="fixed top-20 right-0 w-full h-full z-50 flex justify-center items-center ">
 					<div className="bg-grayBackground w-3/4 max-w-sm rounded shadow-lg p-4">
 
 						<div className="mt-4">
