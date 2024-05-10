@@ -14,6 +14,7 @@ import * as yup from 'yup'
 import { FaEnvelopeOpenText } from "react-icons/fa6";
 import { FaPhoneAlt } from "react-icons/fa";
 import { DividerWithImg } from "@/utils/DividerWithImg";
+import toast from "react-hot-toast";
 
 
 export default function ContactPage() {
@@ -46,7 +47,7 @@ export default function ContactPage() {
 			},
 			validationSchema,
 			onSubmit: async (values) => {
-				console.log(values);
+				toast.success('Form Submitted Successfully!');
 			},
 		});
 

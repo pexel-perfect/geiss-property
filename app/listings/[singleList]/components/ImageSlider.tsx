@@ -18,13 +18,14 @@ const ImageSlider: React.FC<Props> = ({ data }) => {
     }
 
     const settings = {
-        dots: true,
+        dots: false,
         infinite: true,
         speed: 500,
         slidesToShow: 1,
         slidesToScroll: 1,
         autoplay: true, 
-        autoplaySpeed: 6000
+        autoplaySpeed: 4000, 
+        arrows: false,        
     };
     return (
         <div>

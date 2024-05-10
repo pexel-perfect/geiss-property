@@ -11,6 +11,8 @@ import ImageModal from "./components/ImageModal";
 import PropertyTypeCard from "./components/PropertyTypeCard";
 import { DividerWithIcon } from "@/utils/DividerWithIcon";
 import ImageSlider from "./components/ImageSlider";
+import PaymentPlanTable from "./components/PaymentPlanTable";
+import InquiryForm from "./components/InquiryForm";
 
 interface Props {
     params: { singleList: string | number };
@@ -79,7 +81,7 @@ const SingleListPage: React.FC<Props> = ({ params }) => {
                     </div>
                 </div>
                 <div className="md:flex pt-8">
-                    <div className="text-light md:w-9/12 pr-8">
+                    <div className="text-light md:w-9/12 md:pr-8">
                         <h1 className="text-primary text-xl font-bold font-primary">{listData?.title ?? ''}</h1>
                         <p className="font-primary text-description pt-2">{listData?.description ?? ''}</p>
                         <div className="pt-8">
@@ -127,11 +129,34 @@ const SingleListPage: React.FC<Props> = ({ params }) => {
 
                                     </div>
                                 }
+
                                 {/* floor plans optional */}
                                 {listData?.floor_plans &&
                                     <div className="pt-8">
                                         <h1 className="text-primary text-xl font-bold font-primary pb-4">Floor Plans:</h1>
                                         <ImageSlider data={listData?.floor_plans} />
+                                    </div>
+                                }
+                                {/* optional: exter links */}
+                                {
+                                    listData?.external_links &&
+                                    <div className="pt-8">
+                                        <h1 className="text-primary text-xl font-bold font-primary">External Links:</h1>
+                                        <ol className="list-disc ps-4">
+                                            {listData?.external_links.map((item: any) => <li key={item} className="font-primary text-description pt-2 underline hover:text-light"><a href={item?.link} target="_blank">{item.text}</a></li>)}
+                                        </ol>
+
+                                    </div>
+                                }
+                                {/* optional: payment plan */}
+                                {
+                                    listData?.payment_plan &&
+                                    <div className="pt-8">
+                                        <h1 className="text-primary text-xl font-bold font-primary">External Links:</h1>
+                                        <ol className="list-disc pt-4">
+                                            <PaymentPlanTable data={listData?.payment_plan} />
+                                        </ol>
+
                                     </div>
                                 }
 
@@ -155,8 +180,10 @@ const SingleListPage: React.FC<Props> = ({ params }) => {
                             </div>
                         </div>
                     </div>
-                    <div className="md:w-1/4 bg-grayBackground text-light p-4 rounded-lg mt-4 md:mt-0">
-                        Form will be added soon
+                    <div className="md:w-1/4 mt-4 md:mt-0 relative">
+                        <div className="bg-grayBackground text-light p-4 rounded-lg sticky top-24">                        
+                            <InquiryForm />
+                        </div>
                     </div>
                 </div>
             </div>

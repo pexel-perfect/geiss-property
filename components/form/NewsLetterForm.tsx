@@ -3,6 +3,7 @@ import { CustomFilledButton } from "@/utils/CustomButton"
 import { filterFormikErrors } from "@/utils/formikHelper"
 import { Input } from "@nextui-org/input"
 import { useFormik } from "formik"
+import toast from "react-hot-toast"
 import * as yup from 'yup'
 
 export const NewsLetterForm = () => {
@@ -22,7 +23,7 @@ export const NewsLetterForm = () => {
             },
             validationSchema,
             onSubmit: async (values) => {
-                console.log(values);
+                toast.success('Form Submitted Successfully!');
             },
         });
 

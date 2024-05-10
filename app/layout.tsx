@@ -8,6 +8,8 @@ import { Metadata, Viewport } from "next";
 import { Providers } from "./providers";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
+import { Toaster } from 'react-hot-toast';
+
 
 export const metadata: Metadata = {
 	title: {
@@ -42,6 +44,7 @@ export default function RootLayout({
 				)}
 			>
 				<Providers >
+				<div><Toaster/></div>
 					<div className="relative flex flex-col ">
 						<Navbar />
 						<main className="min-h-screen ">
