@@ -57,15 +57,15 @@ export const Navbar = () => {
 
 			{/* Mobile menu */}
 			<div
-				className="sm:hidden basis-1 pl-4 text-primary cursor-pointer relative"
+				className="sm:hidden basis-1 pl-4 text-primary cursor-pointer relative z-51"
 				onClick={handleMobileMenuToggle}
 			>
 				{isMobileMenuOpen ? <AiOutlineClose /> : <RxHamburgerMenu />}
 			</div>
 
 			{isMobileMenuOpen && (
-				<div className='absolute top-full left-0 w-full'>
-					<div className="fixed top-0 w-full z-50 flex justify-center">
+				<div className='absolute'>
+					<div className="fixed top-20  w-full -z-40 flex justify-center">
 						<div className="bg-grayBackground w-3/4 max-w-sm rounded shadow-lg p-4">
 							<div className="mt-4">
 								{siteConfig.navItems.map((item, index) => (
