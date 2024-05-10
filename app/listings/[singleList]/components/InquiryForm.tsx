@@ -38,10 +38,10 @@ const InquiryForm: React.FC = () => {
         });
     const errorsToRender = filterFormikErrors(errors, touched, values);
     return (
-        <div >
-            <h1 className="text-primary text-xl font-bold font-primary">Anfrageformular</h1>
+        <div className="p-2">
+            <h1 className="text-primary text-xl font-bold font-primary ">Anfrageformular</h1>
             <form onSubmit={handleSubmit}>
-                <div className="p-2">
+                <div className="py-2">
                     <Input
                         id="name"
                         type="text"
@@ -54,7 +54,7 @@ const InquiryForm: React.FC = () => {
                         onChange={handleChange}
                     />
                 </div>
-                <div className="p-2">
+                <div className="py-2">
                     <Input
                         id="email"
                         type="email"
@@ -66,7 +66,7 @@ const InquiryForm: React.FC = () => {
                         onChange={handleChange}
                     />
                 </div>
-                <div className="p-2">
+                <div className="py-2">
                     <Input
                         id="phone"
                         type="text"
@@ -78,7 +78,7 @@ const InquiryForm: React.FC = () => {
                         onChange={handleChange}
                     />
                 </div>
-                <div className="p-2 w-full ">
+                <div className="py-2 w-full ">
                     <Textarea
                         id="nachricht"
                         key="underlined"
@@ -92,7 +92,7 @@ const InquiryForm: React.FC = () => {
                         onChange={handleChange}
                     />
                 </div>
-                <div className="p-4">
+                <div className="py-4">
                     <CustomFilledButton onClick={() => handleChange}>Submit</CustomFilledButton>
                 </div>
                 <div className="">
