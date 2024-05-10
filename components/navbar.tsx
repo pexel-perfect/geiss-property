@@ -57,27 +57,28 @@ export const Navbar = () => {
 
 			{/* Mobile menu */}
 			<div
-				className="sm:hidden basis-1 pl-4 text-primary cursor-pointer"
+				className="sm:hidden basis-1 pl-4 text-primary cursor-pointer relative"
 				onClick={handleMobileMenuToggle}
 			>
-				{isMobileMenuOpen ?<AiOutlineClose /> : <RxHamburgerMenu />}
+				{isMobileMenuOpen ? <AiOutlineClose /> : <RxHamburgerMenu />}
 			</div>
 
 			{isMobileMenuOpen && (
-				<div className="fixed top-0 right-0 w-full h-full z-50 flex justify-center items-center ">
-					<div className="bg-grayBackground w-3/4 max-w-sm rounded shadow-lg p-4">
-
-						<div className="mt-4">
-							{siteConfig.navItems.map((item, index) => (
-								<NextLink
-									key={index}
-									className="block py-2 text-description hover:text-grayBackground hover:bg-gray-200 px-4"
-									href={item.href}
-									onClick={closeMobileMenu}
-								>
-									{item.label}
-								</NextLink>
-							))}
+				<div className='absolute top-full left-0 w-full'>
+					<div className="fixed top-0 w-full z-50 flex justify-center">
+						<div className="bg-grayBackground w-3/4 max-w-sm rounded shadow-lg p-4">
+							<div className="mt-4">
+								{siteConfig.navItems.map((item, index) => (
+									<NextLink
+										key={index}
+										className="block py-2 text-description hover:text-grayBackground hover:bg-gray-200 px-4"
+										href={item.href}
+										onClick={closeMobileMenu}
+									>
+										{item.label}
+									</NextLink>
+								))}
+							</div>
 						</div>
 					</div>
 				</div>
