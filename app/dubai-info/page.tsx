@@ -4,6 +4,7 @@ import { CustomDescription } from "@/utils/CustomDescription";
 import { CustomTitle } from "@/utils/CustomTitle";
 import React from "react";
 import BlogCard from "./components/BlogCard";
+import LoadingSkeleton from "@/utils/LoadingSkeleton";
 
 const DubaiInfoPage = () => {
     const [blogs, setBlogs] = React.useState<any>(null);
@@ -25,7 +26,7 @@ const DubaiInfoPage = () => {
     }, []);
 
     return (
-        <>
+        <LoadingSkeleton open={loading}>
             <div
                 className="relative bg-cover bg-center  flex itemsp-center justify-center py-16 md:py-36"
                 style={{
@@ -53,12 +54,12 @@ const DubaiInfoPage = () => {
                 </div>
                 <div className=" grid grid-cols-1 md:grid-cols-3 gap-4">
                     {blogs?.map((item: any) => (
-                        <BlogCard title={item.title} excerpt={item.excerpt} key={item.title} image={item.image} />
+                        <BlogCard title={item.title} excerpt={item.excerpt} key={item.title} image={item.image} id={item.id}/>
                     ))}
 
                 </div>
             </div>
-        </>
+        </LoadingSkeleton>
     );
 }
 
