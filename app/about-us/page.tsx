@@ -2,7 +2,7 @@ import { title } from "@/components/primitives";
 import { CustomDescription } from "@/utils/CustomDescription";
 import { DividerWithImg } from "@/utils/DividerWithImg";
 
-export default function AboutPage() {
+const  AboutPage = () =>{
 	return (
 		<>
 			<div
@@ -55,3 +55,5 @@ export default function AboutPage() {
 		</>
 	);
 }
+
+export default AboutPage; 

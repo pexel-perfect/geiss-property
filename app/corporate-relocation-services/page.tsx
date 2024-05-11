@@ -1,7 +1,7 @@
 import { CustomDescription } from "@/utils/CustomDescription";
 import { DividerWithImg } from "@/utils/DividerWithImg";
 
-export default function AboutPage() {
+const AboutPage = () => {
     return (
         <>
             <div
@@ -33,8 +33,10 @@ export default function AboutPage() {
                 <div className="py-8">
                     <h1 className="text-white text-xl font-bold font-primary">VIP-Visa- und Aufenthaltsdienstleistungen für einen nahtlosen Übergang</h1>
                     <p className="font-primary text-description pt-2">{`Machen Sie Dubai mit unseren VIP-Visadiensten nahtlos zu Ihrem Zuhause. Unser engagiertes Team bietet persönliche Unterstützung während des gesamten Bewerbungsprozesses und sorgt für eine stressfreie und effiziente Erfahrung von Beginn bis zur Genehmigung.`}</p>
-                </div>                
+                </div>
             </div>
         </>
     );
 }
+
+export default AboutPage; 
