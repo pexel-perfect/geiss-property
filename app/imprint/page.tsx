@@ -8,7 +8,7 @@ const ImprintPage = () => {
     return (
         <>
             <div
-                className="relative bg-cover bg-center  flex itemsp-center justify-center py-16 md:py-28"
+                className="relative bg-cover bg-center  flex itemsp-center justify-center py-16 md:py-36"
                 style={{
                     backgroundImage: `url('/images/corporate-services-geiss-property-scaled.jpg')`,
                 }}

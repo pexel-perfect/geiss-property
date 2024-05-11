@@ -7,14 +7,12 @@ import LoadingSkeleton from "@/utils/LoadingSkeleton";
 
 const AboutPage = () => {
 	const [listings, setListings] = React.useState<any>(null);
-	console.log(listings, "listings");
 	const [loading, setLoading] = React.useState<boolean>(true);
 	React.useEffect(() => {
 		const fetchList = async () => {
 			setLoading(true);
 			try {
 				const data = await getListings();
-				console.log(data, "data");
 				setListings(data);
 			} catch (error: any) {
 				throw new Error(error.message)
@@ -28,7 +26,7 @@ const AboutPage = () => {
 	return (
 		<LoadingSkeleton open={loading}>
 			<div
-				className="relative bg-cover bg-center  flex items-center justify-center py-16 md:py-24"
+				className="relative bg-cover bg-center  flex items-center justify-center py-16 md:py-36"
 				style={{
 					backgroundImage: `url('/images/listing_page_banner.jpg')`,
 				}}

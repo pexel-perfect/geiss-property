@@ -8,7 +8,7 @@ import { Image as NextUIImage } from "@nextui-org/image";
 import Image from "next/image";
 import Link from "next/link";
 
-export default function Home() {
+const Home = () =>  {
 	return (
 		<>
 			{/* hero section */}
@@ -124,3 +124,6 @@ export default function Home() {
 		</>
 	);
 }
+
+
+export default Home; 

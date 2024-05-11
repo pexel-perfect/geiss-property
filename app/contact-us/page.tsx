@@ -17,7 +17,7 @@ import { DividerWithImg } from "@/utils/DividerWithImg";
 import toast from "react-hot-toast";
 
 
-export default function ContactPage() {
+const  ContactPage = ()=> {
 
 	const validationSchema = yup.object().shape({
 		name: yup.string()
@@ -247,3 +247,5 @@ export default function ContactPage() {
 		</>
 	);
 }
+
+export default ContactPage; 
