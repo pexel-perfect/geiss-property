@@ -62,10 +62,9 @@ const  ContactPage = ()=> {
 	const errorsToRender = filterFormikErrors(errors, touched, values);
 
 	// console.log(errors);
-	console.log(values, "values");
 	return (
-		<>
-			<div className="grid grid-cols-1 md:grid-cols-2 text-light container">
+		<div className="lg:mt-28 mt-12">
+			<div className="grid grid-cols-1 md:grid-cols-2 text-light container ">
 				<div>
 					<NextUiImage
 						isBlurred
@@ -190,7 +189,6 @@ const  ContactPage = ()=> {
 						})}
 					</div>
 				</div>
-
 			</div>
 			<div className="bg-grayBackground pb-10">
 				<div className="container">
@@ -244,7 +242,7 @@ const  ContactPage = ()=> {
 					</div>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }
 

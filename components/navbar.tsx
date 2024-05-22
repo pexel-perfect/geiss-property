@@ -1,88 +1,63 @@
-'use client'
-import React, { useState } from 'react';
-import { Logo } from "@/components/icons";
+"use client";
+import Link from "next/link";
+import React from "react";
+import { RxCross2, RxHamburgerMenu } from "react-icons/rx";
+import { Logo } from "./icons";
 import { siteConfig } from "@/config/site";
-import { RxHamburgerMenu } from "react-icons/rx";
-import { AiOutlineClose } from "react-icons/ai";
-// Replace "your-close-icon-library" with the actual library you're using
-import {
-	NavbarBrand,
-	NavbarContent,
-	NavbarItem,
-	Navbar as NextUINavbar
-} from "@nextui-org/navbar";
-import clsx from "clsx";
-import NextLink from "next/link";
 
-export const Navbar = () => {
-	const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+const Navbar: React.FC = () => {
+    const [isOpenNav, setIsOpenNav] = React.useState<boolean>(false);
+    const [isScrolled, setIsScrolled] = React.useState<boolean>(false);
+    const [isDropdownOpen, setIsDropdownOpen] = React.useState<boolean>(false);
 
-	const handleMobileMenuToggle = () => {
-		setIsMobileMenuOpen((prev) => !prev);
-	};
+    React.useEffect(() => {
+        const handleScroll = () => {
+            const scrolled = window.scrollY > 0;
+            setIsScrolled(scrolled);
+        };
 
-	const closeMobileMenu = () => {
-		setIsMobileMenuOpen(false);
-	};
+        window.addEventListener("scroll", handleScroll);
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
 
-	return (
-		<NextUINavbar maxWidth="xl" position="sticky" className="py-4 relative">
-			<NavbarContent className="basis-1/5 sm:basis-full" justify="start">
-				<NavbarBrand as="li" className="gap-3 max-w-fit">
-					<NextLink className="flex justify-start items-center gap-1" href="/">
-						<Logo />
-					</NextLink>
-				</NavbarBrand>
-			</NavbarContent>
+    return (
+        <div className={`mx-auto w-full shadow fixed top-0 left-0  z-50 ${isScrolled
+            ? "bg-grayBackground bg-opacity-100 duration-500"
+            : " bg-opacity-20 "
+            }`}>
+            <nav
+                className={`container-x md:flex font-primary justify-around  items-center py-4`}
+            >
+                <div className="flex justify-between items-center z-10">
+                    <Link href={"/"} className="flex-shrink-0">
+                        <p className="text-primary font-extrabold text-2xl uppercase">
+                            <Logo />
+                        </p>
+                    </Link>
+                    <span className="block md:hidden z-50">
+                        {isOpenNav ? (
+                            <RxCross2 onClick={() => setIsOpenNav(false)} color="white" />
+                        ) : (
+                            <RxHamburgerMenu onClick={() => setIsOpenNav(true)} color="white" />
+                        )}
+                    </span>
+                </div>
 
-			<NavbarContent
-				className="hidden sm:flex basis-1/5 sm:basis-full"
-				justify="end"
-			>
-				<ul className="hidden lg:flex gap-5 justify-start ml-2">
-					{siteConfig.navItems.map((item) => (
-						<NavbarItem key={item.href}>
-							<NextLink
-								className={clsx(
-									"data-[active=true]:text-light text-light data-[active=true]:font-medium uppercase font-secondary font-[500] text-[17px]"
-								)}
-								href={item.href}
-							>
-								{item.label}
-							</NextLink>
-						</NavbarItem>
-					))}
-				</ul>
-			</NavbarContent>
-
-			{/* Mobile menu */}
-			<div
-				className="sm:hidden basis-1 pl-4 text-primary cursor-pointer relative z-51"
-				onClick={handleMobileMenuToggle}
-			>
-				{isMobileMenuOpen ? <AiOutlineClose /> : <RxHamburgerMenu />}
-			</div>
-
-			{isMobileMenuOpen && (
-				<div className='absolute md:hidden'>
-					<div className="fixed top-20  w-full -z-40 flex justify-center">
-						<div className="bg-grayBackground w-3/4 max-w-sm rounded shadow-lg p-4">
-							<div className="mt-4">
-								{siteConfig.navItems.map((item, index) => (
-									<NextLink
-										key={index}
-										className="block py-2 text-description hover:text-grayBackground hover:bg-gray-200 px-4"
-										href={item.href}
-										onClick={closeMobileMenu}
-									>
-										{item.label}
-									</NextLink>
-								))}
-							</div>
-						</div>
-					</div>
-				</div>
-			)}
-		</NextUINavbar>
-	);
+                <ul
+                    className={` flex flex-col  md:flex-row md:gap-4 gap-4 py-8 md:py-0 md:opacity-100 ${isOpenNav ? "opacity-100 " : "opacity-0 "
+                        } md:items-center md:justify-end md:static absolute left-0 px-7 md:px-0 transition-all ease-in duration-300 bg-grayBackground text-white lg:bg-transparent md:bg-opacity-0 w-full z-auto`}
+                >
+                    {siteConfig.navItems.map((item) => (
+                        <li onClick={() => setIsOpenNav(false)} key={item.label} className=" uppercase font-secondary font-[500] text-[17px]">
+                            <Link href={item.href}>{item.label}</Link>
+                        </li>
+                    ))}
+                </ul>
+            </nav>
+        </div>
+    );
 };
+
+export default Navbar;

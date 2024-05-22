@@ -1,5 +1,4 @@
 import { Footer } from "@/components/Footer";
-import { Navbar } from "@/components/navbar";
 import { fontSans } from "@/config/fonts";
 import { siteConfig } from "@/config/site";
 import "@/styles/globals.css";
@@ -9,6 +8,7 @@ import { Providers } from "./providers";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { Toaster } from 'react-hot-toast';
+import Navbar from "@/components/navbar";
 
 
 export const metadata: Metadata = {
@@ -44,7 +44,7 @@ export default function RootLayout({
 				)}
 			>
 				<Providers >
-				<div><Toaster/></div>
+					<div><Toaster /></div>
 					<div className="relative flex flex-col ">
 						<Navbar />
 						<main className="min-h-screen ">

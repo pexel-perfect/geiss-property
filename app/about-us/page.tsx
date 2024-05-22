@@ -4,7 +4,7 @@ import { DividerWithImg } from "@/utils/DividerWithImg";
 
 const  AboutPage = () =>{
 	return (
-		<>
+		<div>
 			<div
 				className="relative bg-cover bg-center  flex itemsp-center justify-center py-16 md:py-36"
 				style={{
@@ -12,7 +12,7 @@ const  AboutPage = () =>{
 				}}
 			>
 				<div className="absolute inset-0 bg-gradient-to-t from-black via-transparent opacity-60"></div>
-				<div className="relative z-10 text-center text-white">
+				<div className="relative z-10 text-center text-white mt-16 lg:mt-28">
 					<h1 className="text-4xl md:text-6xl lg:text-7xl mb-4 font-primary">Aktuelle Angebote</h1>
 					<p className="text-lg md:text-xl lg:text-3xl mb-2 md:mb-6 font-primary">- Carmen und Robert Geiss -</p>
 					<p className="text-lg md:text-xl lg:text-3xl mb-6 font-primary">- Die Geissens -</p>
@@ -52,7 +52,7 @@ const  AboutPage = () =>{
 				`}</p>
 				</div>
 			</div>
-		</>
+		</div>
 	);
 }
 

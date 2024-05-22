@@ -89,7 +89,7 @@ const Home = () =>  {
 				<CustomTitle> Aktuelle Angebote</CustomTitle>
 				<div className="pt-4">
 					<div
-						className="flex flex-col items-center md:flex-row md:justify-center gap-2 md:gap-6"
+						className="grid grid-cols-1 lg:grid-cols-3 gap-2 md:gap-6"
 					>
 						<OfferCard
 							title="APARTMENT ONE ZA’ABEEL TOWER - KAUF OR MIETE"

@@ -8,7 +8,7 @@ export const Logo: React.FC<IconSvgProps> = ({
 	height,
 	...props
 }) => (
-	<Image src="/images/logo.png" height={80} width={150} alt="Logo"/>
+	<Image src="/images/logo.png" height={80} width={150} alt="Logo" />
 );
 
 export const DiscordIcon: React.FC<IconSvgProps> = ({
