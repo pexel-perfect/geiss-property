@@ -96,7 +96,7 @@ const Home = () =>  {
 							price="2,375,000 EUR"
 							area="2,015 Sq. Ft. | 187 m²"
 							bed="3"
-							url="Entry-2-Bedroom-zaabeel-Tower.jpg"
+							url="/images/Entry-2-Bedroom-zaabeel-Tower.jpg"
 							redirect="/listings"
 						/>
 						<OfferCard
@@ -104,7 +104,7 @@ const Home = () =>  {
 							price="4,375,000 EUR"
 							area="2,579 Sq. Ft. | 240 m²"
 							bed="3"
-							url="High-end-living-Room-zaabeel-Tower.jpg"
+							url="/images/High-end-living-Room-zaabeel-Tower.jpg"
 							redirect="/listings"
 						/>
 						<OfferCard
@@ -112,7 +112,7 @@ const Home = () =>  {
 							price="13,000,000 EUR"
 							area="6,060 Sq. Ft. | 563 m²"
 							bed="4"
-							url="Villa-Palm.png"
+							url="/images/Villa-Palm.png"
 							redirect="/listings"
 						/>
 					</div>

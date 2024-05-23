@@ -15,11 +15,11 @@ export const OfferCard = ({ title, price, bed, area, url, redirect }: OfferCardP
 
     return (
         <Link href={redirect}>
-            <div className="relative overflow-hidden rounded-lg shadow-lg">
-                <NextUiImage
+            <div className="relative overflow-hidden rounded-lg shadow-lg bg-red-500">
+                <Image
                     src={url}
                     alt={title}
-                    width={400}
+                    width={500}
                     height={400}
                     className="z-0 banner-img"
                 />
